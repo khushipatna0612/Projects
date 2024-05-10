@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Poppins:ital,wght@0,500;1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: url('https://rare-gallery.com/uploads/posts/5418719-beach-tree-cloud-sky-sand-palm-sunrise-water-coast-shore-sunset-tropical-nature-calm-outdoors-palm-tree-ocean-paradise-sunlight-blue-free-stock-photos.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8%;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.btn {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    background: #f5168d;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    width: 120px;
+    height: 50px;
+    cursor: pointer; */
+    background-color: palevioletred;
+    color: black;
+    width: 120px;
+    height: 50px;
+}
+
+.btn:hover{
+    text-decoration: none;
+    color: #000;
+}
+
+nav ul {
+    list-style: none;
+    width: 100%;
+    text-align: right;
+    padding-right: 60px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+nav ul li a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.content {
+    margin-top: 14%;
+    max-width: 620px;
+}
+
+.content h1 {
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 85px;
+    margin-bottom: 25px;
+    margin-left: 10px;
+    position: relative;
+    top: -30px;
+}
+
+.content p1, form{
+    position: relative;
+    top: -30px;
+
+}
+
+.content h2 {
+    margin-top: 0 !important;
+    font-size: 60px;
+    font-weight: 100px;
+    line-height: 65px;
+    margin-bottom: 25px;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.content h3 {
+    font-size: 40px;
+    font-weight: 550px;
+    justify-content: center;
+    display: flex;
+    margin-left: 50px;
+    align-items: center;
+    position: relative;
+    top: -150px;
+}
+
+.content .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minimax(30rem, 1fr));
+    gap: 2rem;
+}
+.content .img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+.content h4, p, img, .btn{
+    margin-left: 10px;
+}
+
+.content form {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.content form input {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.content form .btn {
+    font-size: 15px;
+    padding: 10px 30px;
+}
+
+
+body h1 {
+    margin-left: 500px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url('https://wallpapersmug.com/large/8bcb79/calm-beach-sunset-nature.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.image-item {
+    flex-basis: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    text-align: center;
+    margin-right: 10px;
+    align-items: center;
+}
+
+
+.image-item img {
+    max-width: 500%;
+    width: 250px;
+    height: 200px;
+    /* height: auto; */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    justify-content: space-between;
+}
+
+/* .image-item .btn{
+    color:black;
+} */
+.image-description {
+    margin-top: 10px;
+    color: #666;
+    font-size: 1.2em;
+}
+
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
