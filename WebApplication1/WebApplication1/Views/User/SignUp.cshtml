@@ -1,0 +1,146 @@
+﻿@model WebApplication1.Models.tbl_user
+@{
+    Layout = null;
+}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: url('https://media.istockphoto.com/id/900301626/photo/brown-wooden-shelfs-fully-packed-with-books-in-a-library.jpg?s=612x612&w=0&k=20&c=vhsqZdbeQsYtZ2FToSgl1LvgqZhQ331N8UX_1KGsZBw=');
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .img-responsive {
+        background-color: rgba(244, 244, 244, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        position: fixed;
+        bottom: 85px;
+        left: 40px;
+    }
+
+        .img-responsive h2 {
+            color: #333;
+            text-align: center;
+            font-size: 20px;
+        }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            .form-group button:hover {
+                background-color: #45a049;
+                cursor: pointer;
+            }
+
+
+    .btn-success {
+        background-color: #4caf50;
+        color: #000000;
+    }
+
+        .btn-success:hover {
+            cursor: pointer;
+            background-color: #666;
+        }
+
+    .error-message {
+        color: #d9534f;
+        margin-top: 5px;
+    }
+</style>
+<script src="https://code.jquery.com/jquery.js"></script>
+<div id="box" class="img-responsive">
+    @using (@Html.BeginForm("SignUp",
+                          "User",
+                          FormMethod.Post,
+                          new { enctype = "multipart/form-data" }))
+    {
+        <h2> User SignUp </h2>
+    }
+    <div class="form-group">
+        <label for="u_name"></label>
+        @*<input type="text" id="txtUsername" name="txtUsername" class="form-control" placeholder="Username" required="required" />*@
+        @Html.TextBoxFor(x => x.u_name, new { @class = "form-control", @placeholder = "Username" })
+    </div>
+    <span style="color:red">  @Html.ValidationMessageFor(x => x.u_name)</span>
+
+    <div class="form-group">
+        <label for="u_email"></label>
+        @*<input type="text" id="txtUsername" name="txtUsername" class="form-control" placeholder="Username" required="required" />*@
+        @Html.TextBoxFor(x => x.u_email, new { @class = "form-control", @placeholder = "Email" })
+    </div>
+    <span style="color:red">  @Html.ValidationMessageFor(x => x.u_email)</span>
+
+    <div class="form-group">
+        <label for="u_password"></label>
+        @*<input type="text" id="txtUsername" name="txtUsername" class="form-control" placeholder="Username" required="required" />*@
+        @Html.PasswordFor(x => x.u_password, new { @class = "form-control", @placeholder = "Password" })
+    </div>
+    <span style="color:red">  @Html.ValidationMessageFor(x => x.u_password)</span>
+
+    <div class="form-group">
+        <label for="u_confirm_password"></label>
+        @*<input type="text" id="txtUsername" name="txtUsername" class="form-control" placeholder="Username" required="required" />*@
+        @Html.PasswordFor(x => x.ct_confirm_password, new { @class = "form-control", @placeholder = "Confirm Password" })
+    </div>
+    <span style="color:red">  @Html.ValidationMessageFor(x => x.u_password)</span>
+
+    <div class="form-group">
+        <label for="u_address"></label>
+        @*<input type="text" id="txtUsername" name="txtUsername" class="form-control" placeholder="Username" required="required" />*@
+        @Html.PasswordFor(x => x.ct_address, new { @class = "form-control", @placeholder = "Address" })
+    </div>
+    <span style="color:red">  @Html.ValidationMessageFor(x => x.u_password)</span>
+
+    <div class="form-group">
+        <label for="u_contact"></label>
+        @*<input type="text" id="txtUsername" name="txtUsername" class="form-control" placeholder="Username" required="required" />*@
+        @Html.TextBoxFor(x => x.u_contact, new { @class = "form-control", @placeholder = "Phone number" })
+    </div>
+    <span style="color:red">  @Html.ValidationMessageFor(x => x.u_contact)</span>
+
+    <form runat="server" onsubmit="return onvalidateForm()" />
+    <div class="form-group">
+        <input type="submit" value="SignIn" class="btn btn-success" />
+    </div>
+    @*<p id="para">Don't have an account? <a href="signup.aspx">Register now</a></p>*@
+    <div class="form-group">
+        <p class="error-message">@ViewBag.error</p>
+    </div>
+    <!--<div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-picture"></span></div>
+                        <input type="file" name="imgfile" id="imgfile" class="form-control" required="required" />
+                    </div>-->
+
+</div>

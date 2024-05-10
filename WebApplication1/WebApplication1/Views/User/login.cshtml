@@ -1,0 +1,140 @@
+﻿@model WebApplication1.Models.tbl_user
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Online Bookstore</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://media.istockphoto.com/id/900301626/photo/brown-wooden-shelfs-fully-packed-with-books-in-a-library.jpg?s=612x612&w=0&k=20&c=vhsqZdbeQsYtZ2FToSgl1LvgqZhQ331N8UX_1KGsZBw=');
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: rgba(244, 244, 244, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            position: fixed;
+            bottom: 152px;
+            left: 40px;
+        }
+
+            .login-container button {
+                background-color: #28a745;
+                color: #000000;
+                border: none;
+                padding: 10px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .login-container h2 {
+                color: #333;
+                text-align: center;
+            }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+                color: #666;
+            }
+
+        .login-container input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-container button:hover {
+            background-color: #28a745;
+        }
+
+        .error-message {
+            color: #d9534f;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        @using (@Html.BeginForm())
+        {
+            <h2> Login </h2>
+        }
+        <form>
+        <div class="form-group">
+            <label for="txtUsername"></label>
+            @*<input type="text" id="txtUsername" name="txtUsername" class="form-control" placeholder="Username" required="required" />*@
+            @Html.TextBoxFor(x => x.u_email, new { @class = "form-control", @placeholder = "Email" })
+        </div>
+        <span style="color:red">  @Html.ValidationMessageFor(x => x.u_email)</span>
+
+        <div class="form-group">
+            <label for="txtPassword"></label>
+            @*<input type="password" id="txtPassword" name="txtPassword" class="form-control" placeholder="Password" required="required" />*@
+            @Html.PasswordFor(x => x.u_password, new { @class = "form-control", @placeholder = "Password" })
+        </div>
+
+        <span>@Html.ValidationMessageFor(x => x.u_password)</span>
+        <div class="form-group">
+            <center>
+                @using (@Html.BeginForm("login", "Admin"))
+                {
+                    <button type="submit" value="login" class="btn btn-success">Login</button>
+                }
+            </center>
+        </div>
+        @*<p id="para">Don't have an account? <a href="signup.aspx">Register now</a></p>*@
+        <div class="form-group">
+            <p style="color:red">@ViewBag.error</p>
+        </div>
+
+
+        <script>
+            function validateForm() {
+                var username = document.getElementById('txtUsername').value;
+                var password = document.getElementById('txtPassword').value;
+
+
+                if (username.trim() === '' || password.trim() === '') {
+                    document.getElementById('error-message').innerText = 'Please enter both username and password.';
+                    return false;
+                }
+
+                return true;
+            }
+        </script>
+
+        <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+        <script src="~/Scripts/jquery.validate.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+    </form>
+</div>
+</body>
+</html>
+
+

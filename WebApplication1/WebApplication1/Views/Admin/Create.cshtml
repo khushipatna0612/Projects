@@ -1,0 +1,137 @@
+﻿@model WebApplication1.Models.tbl_category
+@{
+    Layout = null;
+}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: url('https://plus.unsplash.com/premium_photo-1677567996070-68fa4181775a?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .img-responsive {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+    }
+
+        .img-responsive h2 {
+            color: #333;
+        }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+                background-color: #45a049;
+                cursor: pointer;
+        }
+
+
+        .btn-success {
+            background-color: #4caf50;
+            color: #000000;
+        }
+
+        .btn-success:hover {
+            cursor:pointer;
+            background-color: #666;
+        }
+    .error-message {
+        color: #d9534f;
+        margin-top: 5px;
+    }
+</style>
+<script src="https://code.jquery.com/jquery.js"></script>
+<div id="box" class="img-responsive">
+    @using (@Html.BeginForm("Create",
+                          "Admin",
+                          FormMethod.Post,
+                          new { enctype = "multipart/form-data" }))
+    {
+        <h2> Add Category </h2>
+
+    <div class="form-group">
+        <label for="ct_name"></label>
+        @*<input type="text" id="txtUsername" name="txtUsername" class="form-control" placeholder="Username" required="required" />*@
+        @Html.TextBoxFor(x => x.ct_name, new { @class = "form-control", @placeholder = "Book Name" })
+    </div>
+    <span style="color:red">  @Html.ValidationMessageFor(x => x.ct_name)</span>
+
+    <div class="form-group">
+        <label for="imgfile"></label>
+        <input type="file" name="imgfile" id="imgfile" class="form-control" required="required" />
+
+    </div>
+
+    <form runat="server" onsubmit="return onvalidateForm()"/>
+    <div class="form-group">
+        <input type="submit" value="Add Book" class="btn btn-success" />
+    </div>
+    @*<p id="para">Don't have an account? <a href="signup.aspx">Register now</a></p>*@
+    <div class="form-group">
+        <p class="error-message">@ViewBag.error</p>
+    </div>
+    <!--<div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-picture"></span></div>
+                        <input type="file" name="imgfile" id="imgfile" class="form-control" required="required" />
+                    </div>-->
+
+@*</div>*@
+    }
+            <script>
+            function validateForm() {
+                var bookName = document.getElementById('ct_name').value;
+
+                if (bookName.trim() === '' ) {
+                    document.getElementById('error-message').innerText = 'Please enter the book name.';
+                    return false;
+                }
+
+                return true;
+            }
+            </script>
+
+            @*<script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+            <script src="~/Scripts/jquery.validate.js"></script>
+            <script src="~/Scripts/jquery.validate.min.js"></script>
+            <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+            <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval") 
+            }
+
+

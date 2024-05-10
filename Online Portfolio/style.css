@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Poppins:wght@500&display=swap');
+
+element.style{
+    width: 100%;
+    margin: 50px 0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background: #080808;
+    color: #fff;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    background-color: red;
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li{
+    list-style: none;
+    margin: 0 23px ;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover{
+    color: rgb(153, 153, 226);
+    font-size: 1.04rem;
+}
+
+.left{
+    font-size: 1.5rem;
+}
+
+.firstSection{
+    display: flex;
+    justify-content: space-around;
+    margin: 23px 0;
+}
+
+.firstSection > div{
+    width: 30%;
+}
+
+.leftSection{
+    font-size: 2rem;
+    margin: 80px 0;
+    padding-left: 0px;
+
+}
+
+.rightSection img{
+    margin-right: 200px;
+}
+
+.purple{
+    color: rgb(170, 107, 228);
+}
+
+.a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+}
+
+#element{
+    color: rgb(170, 107, 228);
+}
+
+.about-text{
+    align-items: center;
+    gap: 1.5rem;
+}
+/* ---------------about----------------------- */
+
+p{
+    padding: 5px;
+    margin: 5px;
+    width: 600px;
+}
+
+button{
+    background-color: lightcoral;
+    color: black;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 30px;
+    border-radius: 30px;
+    transition: .4s;
+    font-size: 15px;
+}
+
+button:hover{
+    background-color: #fff;
+    border: 2px solid lightcoral;
+    cursor: pointer;
+}
+
+.services{
+    width: 100%;
+    padding: 40px 0px;
+}
+
+.about-text {
+    width: 100%;
+    padding: 40px 0px;
+}
+
+.about-text p{
+    color: rgb(153, 153, 226);
+
+}
+.services h1{
+    margin-bottom: 20px;
+}
+
+.services h6{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.services p{
+    color: rgb(153, 153, 226);
+}
+
+.contactform{
+    padding: 0 20px;
+    padding-top: 24px;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.contactform h1{
+    text-align: justify;
+}
+
+.contactform form div{
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactform form div input{
+    width: 26vw;
+    border-radius: 5px;
+    margin: 6px 0 0 0;
+    padding: 3px;
+}
+
+#emailHelp{
+    color: lightblue;
+    margin: 0 5px;
+}
+
+.form-check{
+
+}
+
+.form-check input{
+    
+}

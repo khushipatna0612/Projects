@@ -1,0 +1,7 @@
+
+    [
+       {"name" : "Khushi", "age": 21, "company" : "Unikul Solutions" },
+       {"name" : "Vidula", "age" : 21, "company" :"Unikul Solutions" },
+       {"name" : "Kavya", "age" : 22, "company" : "Unikul Solutions"},
+       {"name" : "Riya", "age" : 22, "company" :"Unikul Solutions"}
+]
