@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    font-size: 35px;
+    text-align: center;
+    margin: 20px 0;
+    color: white;
+}
+
+form {
+    border: 1px solid white;
+    padding: 50px;
+    border-radius: 5px;
+    width: 500px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: inset -2px 2px 2px white;
+}   
+label {
+    font-size: medium;
+    display: block;
+    margin-bottom: 8px;
+    color: white;
+}
+
+button {
+    cursor: pointer;
+    color: purple;
+    font-size: 17px; 
+    font-weight: bold;
+}
+
+button:hover{
+    opacity: 1;
+}
+
+.container{
+    background-image: url('https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_1160/https://www.eminenture.com/blog/wp-content/uploads/2023/03/2-1160x770-1.jpg');
+    background-size: cover;
+}
+
+.gender-box{
+    color: white;
+    font-weight: bold;
+}
+
+.input-box input{
+    width: 75%;
+    height: 30px;
+    margin: 2px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.input-box label{
+    display: block;
+    font-weight: bold;
+}
+
+.input-box input[type="text"],
+.input-box input[type="email"],
+.input-box input[type="password"],
+.input-box textarea,
+.input-box input[type="url"],
+.input-box input[type="file"] {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.gender-box label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.date-box input[type="date"] {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.number-box input[type="text"] {
+    width: 10%;
+    padding: 8px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.number-box input[name="contact"] {
+    width: 30%;
+}
+
+#inputlink {
+    width: 90%;
+}
+
+
+
+
+
